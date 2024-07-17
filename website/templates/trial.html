@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="max-w-full mx-auto p-4 flex flex-wrap justify-center">
+    <div class="max-w-lg mx-auto p-4">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-image">Blog Image</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline" id="blog-image" type="url" placeholder="Enter blog image URL">
+            </div>
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-title">Blog Title</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline" id="blog-title" type="text" placeholder="Enter blog title">
+            </div>
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-text">Blog Text</label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline" id="blog-text" placeholder="Enter blog text"></textarea>
+            </div>
+            <div class="mb-6">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-date">Blog Date</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline" id="blog-date" type="date">
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Post</button>
+        </form>
+    </div>
+    <div class="max-w-lg mx-auto p-4">
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-zinc-700 text-lg font-bold mb-4">Blog History</h2>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

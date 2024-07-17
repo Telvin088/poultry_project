@@ -1,0 +1,84 @@
+{% extends 'dash_base.html' %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+<div class="min-h-screen bg-zinc-100 white:bg-zinc-900">
+    <div class="container mx-auto">
+        <div class="flex flex-col lg:flex-row">
+
+            <div class="bg-white white:bg-zinc-800 p-6 rounded shadow-lg lg:w-1/4 mb-6 lg:mb-0">
+                <h2 class="text-2xl font-semibold mb-4" style="color: #333;">Add New Category</h2>
+                <form action="/add_category" method="post" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <label class="block text-zinc-700 dark:text-zinc-300" style="color: #333;">Name</label>
+                        <input type="text" name="name"
+                            class="w-full p-2 border border-zinc-300 rounded white:bg-zinc-700 dark:text-zinc-300"
+                            style="border: 1px solid #888;">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-zinc-700 dark:text-zinc-300" style="color: #333;">Sort Description</label>
+                        <input type="text" name="sort_description"
+                            class="w-full p-2 border border-zinc-300 rounded white:bg-zinc-700 dark:text-zinc-300"
+                            style="border: 1px solid #888;">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-zinc-700 dark:text-zinc-300" style="color: #333;">Full Description</label>
+                        <textarea name="full_description"
+                            class="w-full p-2 border border-zinc-300 rounded white:bg-zinc-700 dark:text-zinc-300"
+                            style="border: 1px solid #888;"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-zinc-700 dark:text-zinc-300" style="color: #333;">Product Tags</label>
+                        <input type="text" name="product_tags"
+                            class="w-full p-2 border border-zinc-300 rounded white:bg-zinc-700 dark:text-zinc-300"
+                            style="border: 1px solid #888;">
+                        <p class="text-sm text-zinc-500 dark:text-zinc-400">(Type and make comma to separate tags)</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-zinc-700 dark:text-zinc-300" style="color: #333;">Category Image</label>
+                        <input type="file" name="category_image"
+                            class="w-full p-2 border border-zinc-300 rounded white:bg-zinc-700 dark:text-zinc-300"
+                            style="border: 1px solid #888;">
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white p-2 rounded-lg">Submit</button>
+                </form>
+                
+            </div>
+
+            <div class="bg-white white:bg-zinc-800 p-6 rounded shadow-lg ml-3" style="width: 790px;">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center">
+                        <label class="block text-zinc-700" style="color: #333;">Search:</label>
+                        <input type="text"
+                            class="p-2 border border-zinc-300 rounded ml-2 outline-none" style="border: 1px solid #888; color: #333; height: 30px;">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Sort Description</th>
+                            <th>Full Description</th>
+                            <th>Product Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in categories %}
+                        <tr>
+                            <td><span class="material-symbols-outlined">
+                                qr_code
+                                </span></td>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.sort_description }}</td>
+                            <td>{{ category.full_description }}</td>
+                            <td>{{ category.product_tags }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

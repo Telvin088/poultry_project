@@ -1,0 +1,29 @@
+{% extends 'dash_base.html' %}
+{% block title %}Order History{% endblock %}
+{% block content %}
+<div class="p-4 rounded" style="background-color: white;">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold" style="color: #333;">Orders History</h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white white:bg-zinc-800 mt-4">
+            <thead style="border-bottom: 1px solid #888;"
+                <tr>
+                    <th class="px-4 py-2">ID</th>
+                    <th class="px-4 py-2">Customer</th>
+                    <th class="px-4 py-2">Email</th>
+                    <th class="px-4 py-2">Items</th>
+                    <th class="px-4 py-2">Price</th>
+                    <th class="px-4 py-2">Payment</th>
+                    <th class="px-4 py-2">Status</th>
+                    <th class="px-4 py-2">Date</th>
+                    <th class="px-4 py-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+{% endblock %}

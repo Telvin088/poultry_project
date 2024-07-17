@@ -1,0 +1,200 @@
+{% extends 'dash_base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="bg-white white:bg-zinc-800 p-4 rounded shadow mb-6">
+    <div class="flex justify-between items-center mb-3" style="border-bottom: 1px solid #ddd;">
+        <div class="text-lg font-bold" style="color: #333;">Recent Orders</div>
+        <span class="p-2">
+            <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                autorenew
+                </span>
+            <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                more_vert
+                </span>
+        </span>
+    </div>
+    <table class="w-full text-left">
+        <thead>
+            <tr>
+                <th class="py-2">Order ID</th>
+                <th class="py-2">Product Name</th>
+                <th class="py-2">Units</th>
+                <th class="py-2">Order Date</th>
+                <th class="py-2">Order Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-2">24541</td>
+                <td class="py-2">Coach Swagger</td>
+                <td class="py-2">1 Unit</td>
+                <td class="py-2">Oct 20, 2018</td>
+                <td class="py-2">$230</td>
+            </tr>
+            <tr>
+                <td class="py-2">24541</td>
+                <td class="py-2">Toddler Shoes, Gucci Watch</td>
+                <td class="py-2">2 Units</td>
+                <td class="py-2">Nov 15, 2018</td>
+                <td class="py-2">$550</td>
+            </tr>
+            <tr>
+                <td class="py-2">24541</td>
+                <td class="py-2">Hat Black Suits</td>
+                <td class="py-2">1 Unit</td>
+                <td class="py-2">Nov 18, 2018</td>
+                <td class="py-2">$325</td>
+            </tr>
+            <tr>
+                <td class="py-2">24541</td>
+                <td class="py-2">Backpack Gents, Swimming Cap Slin</td>
+                <td class="py-2">5 Units</td>
+                <td class="py-2">Dec 13, 2018</td>
+                <td class="py-2">$200</td>
+            </tr>
+            <tr>
+                <td class="py-2">24541</td>
+                <td class="py-2">Speed 500 Ignite</td>
+                <td class="py-2">1 Unit</td>
+                <td class="py-2">Dec 23, 2018</td>
+                <td class="py-2">$150</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="bg-white white:bg-zinc-800 p-4 rounded shadow">
+        <div class="flex justify-between items-center mb-4">
+            <div class="text-lg font-bold" style="color: #333;">New Customers</div>
+            <span class="p-2">
+                <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                    autorenew
+                    </span>
+                <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                    more_vert
+                    </span>
+            </span>
+        </div>
+        <ul>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Selena Wagner</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@selena.ai</div>
+                    </div>
+                </div>
+                <div>2 Orders</div>
+                <div>$150</div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Walter Reuter</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@walter.me</div>
+                    </div>
+                </div>
+                <div>5 Orders</div>
+                <div>$200</div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Larissa Gebhardt</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@larissa.gb</div>
+                    </div>
+                </div>
+                <div>1 Order</div>
+                <div>$50</div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Albrecht Straub</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@albrecht.es</div>
+                    </div>
+                </div>
+                <div>2 Orders</div>
+                <div>$100</div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Leopold Ebert</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@leopold.et</div>
+                    </div>
+                </div>
+                <div>1 Order</div>
+                <div>$60</div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="customer" class="rounded-full mr-2" />
+                    <div>
+                        <div class="font-bold">Larissa Gebhardt</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">@larissa.gb</div>
+                    </div>
+                </div>
+                <div>1 Order</div>
+                <div>$50</div>
+            </li>
+        </ul>
+    </div>
+    <div class="bg-white white:bg-zinc-800 p-4 rounded shadow">
+        <div class="flex justify-between items-center mb-4">
+            <div class="text-lg font-bold" style="color: #333;">Top Products</div>
+            <span class="p-2">
+                <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                    autorenew
+                    </span>
+                <span style="color: #888; font-size: 22px; cursor: pointer;" class="material-symbols-outlined">
+                    more_vert
+                    </span>
+            </span>
+        </div>
+        <ul>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="product" class="mr-2" />
+                    <div>
+                        <div class="font-bold">Baby cotton shoes</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">58 Sales</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="line-through">$520</div>
+                    <div>$500</div>
+                </div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="product" class="mr-2" />
+                    <div>
+                        <div class="font-bold">Hoodies for men</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">20 Sales</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="line-through">$250</div>
+                    <div>$200</div>
+                </div>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="product" class="mr-2" />
+                    <div>
+                        <div class="font-bold">Long slive t-shirt</div>
+                        <div class="text-zinc-500 dark:text-zinc-400">10 Sales</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

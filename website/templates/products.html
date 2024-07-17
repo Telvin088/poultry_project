@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+{% block content %}
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        * {
+            font-family: "Bai Jamjuree", sans-serif;
+        }
+    </style>
+</head>
+
+<div class="bg-zinc-100 dark:light-zinc-900 text-zinc-900 dark:text-zinc-100 p-4"
+    style="font-family: 'Bai Jamjuree', sans-serif;">
+
+    <div class="flex flex-wrap p-4 rounded"
+        style="margin-top: 150px; background-color: #fff; width: 87.5%; margin-left: 82px;">
+        <div class="categories-container flex flex-wrap gap-20">
+            {% for category in categories %}
+            <div class="category-item" data-category-id="{{ category.id }}">
+                <div class="category-details flex flex-col justify-center items-center">
+                    <img src="{{ category.image_url }}" alt="{{ category.name }}"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <div class="category-detail mt-1" style="color: #333; font-size: 12px;">
+                        {{ category.name }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div id="products-container" class="products-container flex flex-wrap gap-4 mt-4 rounded" style="color: #333; width: 87.5%; margin-left: 82px;">
+        <!-- Products will be dynamically loaded here -->
+    </div>
+</div>
+<div class="py-8" style="height: 400px;">
+    <div class="container mx-auto px-4">
+        <div class="text-center border-b py-5" style="display: flex; justify-content: space-between;">
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    satellite_alt
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">FAST DELIVERY</p>
+                <p style="color: #bbb; font-size: 13px;">Across West & East India</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    account_balance_wallet
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">SAFE PAYMENT</p>
+                <p style="color: #bbb; font-size: 13px;">100% Secure Payment</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    money_off
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">ONLINE DISCOUNT</p>
+                <p style="color: #bbb; font-size: 13px;">Add Multi-buy Discount</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    support_agent
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">HELP CENTER</p>
+                <p style="color: #bbb; font-size: 13px;">Dedicated 24/7 Support</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    list_alt
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">CURATED ITEMS</p>
+                <p style="color: #bbb; font-size: 13px;">From Handpicked Sellers</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+            <div>
+                <h3 class="font-bold mb-2">ABOUT THE STORE</h3>
+                <p style="color: #515d66; font-size: 14px;">Got Question? Call us 24/7</p>
+                <p class="text-xl font-bold my-3" style="font-size: 36px; color: #eab308;">254-710226244</p>
+                <p style="color: #515d66; font-size: 14px;">268 St, South New York/NY 98944, United States</p>
+                <p style="color: #515d66; font-size: 14px;">Customersupport@example.com</p>
+                <p style="color: #515d66; font-size: 14px;">Aloshopify@alothemes.com</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">INFOMATION</h3>
+                <p style="color: #515d66; font-size: 14px;">You have not selected the footer menu</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">QUICK LINKS</h3>
+                <p style="color: #515d66; font-size: 14px;">You have not selected the footer menu</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">NEWSLETTER SIGNUP</h3>
+                <p style="color: #515d66; font-size: 14px;">Join 20.000+ subscribers and get a new discount coupon
+                    on every Saturday. Updates information
+                    on Sales and Offers.</p>
+                <div class="flex mt-2">
+                    <input type="email" placeholder="Your email address..."
+                        class="p-2 rounded-l-lg border border-zinc-300 flex-1">
+                    <button class="bg-blue-600 text-white p-2 rounded-r-lg" style="font-size: 14px;">SUBSCRIBE</button>
+                </div>
+                <p class="mt-2" style="color: #515d66; font-size: 14px;">Subscribe for Uminex and get 20% off your
+                    first purchase.</p>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center py-4 border-t">
+            <p class="text-center md:text-left">Copyright © poultry_web all rights reserved. Powered by <a href="#"
+                    class="text-blue-600">Alothemes</a>.</p>
+            <div class="flex mt-4 md:mt-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/M-PESA.png"
+                    style="width: 50px; height: 30px; object-fit: contain;" alt="Visa" class="mx-1">
+                <img src="https://amref.org/wp-content/uploads/2017/10/airtel-money.png"
+                    style="width: 50px; height: 30px; object-fit: contain;" alt="MasterCard" class="mx-1">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.category-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                const categoryId = this.getAttribute('data-category-id');
+                fetch(`/products_by_category/${categoryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const productsContainer = document.getElementById('products-container');
+                        productsContainer.innerHTML = '';  // Clear previous products
+                        if (data.products && data.products.length > 0) {
+                            data.products.forEach(product => {
+                                const productElement = document.createElement('div');
+                                productElement.classList.add('product-item');
+                                productElement.innerHTML = `
+                                    <div class="rounded p-4" style="height: 285px; width: 200px; background-color: #fff;">
+                                        <img src="${product.image_url}" alt="${product.product_name}" style="width: 100%; height: 100px;">
+                                        <div class="mt-2" style="font-weight: bold; height: 40px; font-size: 14px; text-decoration-line: underline;">${product.product_name}</div>
+                                        <div style="height: 50px; font-size: 12px;">${product.sort_description}</div>
+                                        <div style="font-weight: bold;">Kes ${product.price}</div>
+                                        <button class="rounded mt-1 flex items-center" style="background-color: #eab308; padding: 5px; color: #fff; font-size: 13px;">
+                                            <span style="font-size: 17px;" class="material-symbols-outlined mr-1">
+                                                add_shopping_cart
+                                            </span>
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                `;
+                                productsContainer.appendChild(productElement);
+                            });
+                        } else {
+                            productsContainer.innerHTML = '<p>No products found for this category.</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching products:', error);
+                        const productsContainer = document.getElementById('products-container');
+                        productsContainer.innerHTML = '<p>Error loading products. Please try again later.</p>';
+                    });
+            });
+        });
+    });
+</script>
+
+
+{% endblock %}

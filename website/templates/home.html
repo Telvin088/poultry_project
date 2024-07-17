@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        * {
+          font-family: "Bai Jamjuree", sans-serif;
+        }
+    </style>
+</head>
+<div id="home" class="bg-cover bg-center flex flex-col items-center justify-center"
+    style="background-image: url('https://images6.alphacoders.com/398/398990.jpg'); margin-top: 138px; height: 510px;">
+    <h1 class="text-white text-6xl font-bold" style="margin-left: -650px;">POULTRY<br>PERFORMANCE
+        &<br>PRODUCTIVITY<br>CHALLENGES</h1>
+    <p class="text-white" style="margin-left:-730px; margin-top: 20px; font-size: 20px;">We make it a priority to
+        offer flexible services to<br>accommodate your needs.</p>
+</div>
+<div id="about" class="container mx-auto py-12">
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4">
+            <h2 class="text-4xl font-bold">Quality Feeds Made On Your<br>Farm</h2>
+            <p class="mt-4 text-zinc-600">It is a long established fact that a reader will be distracted by the<br>
+                readable content of a page when looking at its layout. The point of<br>using Lorem Ipsum.<br><br>
+
+                Various versions have evolved over the years, sometimes by accident,<br>sometimes on purpose
+                (injected
+                humour and the like).</p>
+            <div class="bg-green-100 p-4 mt-4 rounded" style="background-color: #73805a;">
+                <div class="flex items-center">
+                    <span class="material-symbols-outlined text-9xl text-white">
+                        engineering
+                    </span>
+                    <div>
+                        <h3 class="text-3xl text-white">We Have 35 Years Experience</h3>
+                        <span class="flex align-center">
+                            <a href="#" class="text-white">READ MORE</a>
+                            <span class="material-symbols-outlined text-white ml-2">
+                                arrow_forward
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 p-4" style="position: relative;">
+            <img src="https://t4.ftcdn.net/jpg/03/95/37/57/360_F_395375712_fB1NTZOopwQlTpjXRsm3F7qYHGK62NgY.jpg"
+                style="z-index: 0; position: relative" alt="chickens" class="rounded shadow-md">
+            <img style="margin: -150px 0 0 150px; height: 300px; width: 400px; border: 10px solid white; z-index: 1; position: absolute;"
+                src="https://thumbs.dreamstime.com/b/baby-chickens-19791476.jpg" alt="chickens"
+                class="rounded shadow-md">
+        </div>
+    </div>
+</div>
+<div class="container mx-auto py-8" style="height: 500px; margin-top: 70px;">
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4" style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img2.png" style="height: 220px; width: 260px;"
+                alt="chickens" class="rounded">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img3.png" style="height: 220px; width: 260px;"
+                alt="chickens" class="rounded">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img4.png" style="height: 220px; width: 260px;"
+                alt="chickens" class="rounded">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img2.png" style="height: 220px; width: 260px;"
+                alt="chickens" class="rounded">
+        </div>
+        <div class="w-full md:w-1/2 p-12 rounded" style="background-color: #fdefed;">
+            <h2 class="text-2xl font-bold">Diversified Businesses</h2>
+            <p class="mt-4 text-zinc-600">It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+            <ul class="mt-4 space-y-2">
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="alternative-eggs" class="md:font-bold ml-2"
+                        style="color: #73805a; cursor: pointer;">Alternative Eggs</span>
+                </li>
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="poultry-cages" class="md:font-bold ml-2" style="color: #73805a; cursor: pointer;">Poultry
+                        Cages</span>
+                </li>
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="breeder-management" class="md:font-bold ml-2"
+                        style="color: #73805a; cursor: pointer;">Breeder Management</span>
+                </li>
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="poultry-climate" class="md:font-bold ml-2"
+                        style="color: #73805a; cursor: pointer;">Poultry Climate</span>
+                </li>
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="residue-treatment" class="md:font-bold ml-2"
+                        style="color: #73805a; cursor: pointer;">Residue Treatment</span>
+                </li>
+                <li class="text-red-500 flex text-2xl">
+                    <span class="material-symbols-outlined text-2xl md:font-bold"> arrow_forward </span>
+                    <span id="exhaust-air-treatment" class="md:font-bold ml-2"
+                        style="color: #73805a; cursor: pointer;">Exhaust Air Treatment</span>
+                </li>
+            </ul>
+
+            <div id="popup" class="popup">
+                <span class="close-btn material-symbols-outlined">
+                    close
+                </span>
+                <div id="popup-content" class="popup-content"></div>
+                <button class="close-button">Close</button>
+            </div>
+            <div id="overlay" class="overlay"></div>
+        </div>
+    </div>
+</div>
+<div id="products" class="bg-zinc-100 py-8" style="margin-top: 80px;"">
+        <div class=" container mx-auto">
+    <h2 class="text-2xl font-bold">Poultry Products</h2>
+    <p class="mt-4 text-zinc-600">It is a long established fact that a reader will be distracted by the readable<br>
+        content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+    <div class="flex mt-8" style="width: 100%;">
+        <div class="w-full p-4" style="width: 300px;">
+            <div class="bg-white p-4 rounded shadow-md">
+                <!-- <span class="bg-green-500 text-white px-2 py-1 rounded">New</span> -->
+                <img src="https://webstrot.com/html/farmland/farmland/images/img5.png"
+                    style="height: 150px; width: 260px; object-fit: contain; background-color: #fdefed;" alt="product"
+                    class="mt-4 rounded">
+                <h3 class="mt-4 font-bold">Product Name</h3>
+                <p class="mt-2 text-zinc-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="w-full md:w-1/4 p-4">
+            <div class="bg-white p-4 rounded shadow-md">
+                <!-- <span class="bg-red-500 text-white px-2 py-1 rounded">Hot</span> -->
+                <img src="https://webstrot.com/html/farmland/farmland/images/img6.png"
+                    style="height: 150px; width: 260px; object-fit: contain; background-color: #fdefed;" alt="product"
+                    class="mt-4 rounded">
+                <h3 class="mt-4 font-bold">Product Name</h3>
+                <p class="mt-2 text-zinc-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="w-full p-4" style="width: 300px;">
+            <div class="bg-white p-4 rounded shadow-md">
+                <!-- <span class="bg-green-500 text-white px-2 py-1 rounded">New</span> -->
+                <img src="https://webstrot.com/html/farmland/farmland/images/img7.png"
+                    style="height: 150px; width: 260px; object-fit: contain; background-color: #fdefed;" alt="product"
+                    class="mt-4 rounded">
+                <h3 class="mt-4 font-bold">Product Name</h3>
+                <p class="mt-2 text-zinc-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="w-full p-4" style="width: 300px;">
+            <div class="bg-white p-4 rounded shadow-md">
+                <!-- <span class="bg-green-500 text-white px-2 py-1 rounded">New</span> -->
+                <img src="https://webstrot.com/html/farmland/farmland/images/img6.png"
+                    style="height: 150px; width: 260px; object-fit: contain; background-color: #fdefed;" alt="product"
+                    class="mt-4 rounded">
+                <h3 class="mt-4 font-bold">Product Name</h3>
+                <p class="mt-2 text-zinc-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-8">
+        <button class="bg-green-500 text-white px-4 py-2 rounded">
+            <span class="flex">
+                <span>
+                    <a href="{{ url_for('products') }}">VIEW ALL</a>
+                </span>
+                <span class="material-symbols-outlined ml-2">
+                    east
+                </span>
+            </span>
+        </button>
+    </div>
+</div>
+</div>
+<div style="background-color: #f4f4f5; border: 1px solid #f4f4f5;height: 350px;">
+    <div class="bg-red-500 text-white py-8 rounded mt-10" style="width: 85%; margin-left: 7.5%;">
+        <div class="container mx-auto flex flex-wrap">
+            <div class="w-full md:w-1/4 p-4 text-center">
+                <img src="https://cdn-icons-png.freepik.com/512/7309/7309075.png"
+                    style="height: 60px; width: 60px; background-color: #f1f1f1; border-radius: 50%; padding: 5px; margin-left: 50px;"
+                    alt="icon" class="mx-auto">
+                <h3 class="mt-4 font-bold ml-12" style="text-align: left;">Healthy Chicken</h3>
+                <p class="mt-2 ml-12" style="text-align: left;">Lorem ipsum dolor sit amet,<br>consectetur
+                    adipiscing
+                    elit.</p>
+            </div>
+            <div class="w-full md:w-1/4 p-4 text-center">
+                <img src="https://static.thenounproject.com/png/1946444-200.png"
+                    style="height: 60px; width: 60px; background-color: #f1f1f1; border-radius: 50%; padding: 5px; margin-left: 50px;"
+                    alt="icon" class="mx-auto">
+                <h3 class="mt-4 font-bold ml-12" style="text-align: left;">Hygienic Coop</h3>
+                <p class="mt-2 ml-12" style="text-align: left;">Lorem ipsum dolor sit amet,<br>consectetur
+                    adipiscing
+                    elit.</p>
+            </div>
+            <div class="w-full md:w-1/4 p-4 text-center">
+                <img src="https://cdn-icons-png.freepik.com/512/702/702559.png"
+                    style="height: 60px; width: 60px; background-color: #f1f1f1; border-radius: 50%; padding: 5px; margin-left: 50px;"
+                    alt="icon" class="mx-auto">
+                <h3 class="mt-4 font-bold ml-12" style="text-align: left;">Fresh Eggs</h3>
+                <p class="mt-2 ml-12" style="text-align: left;">Lorem ipsum dolor sit amet,<br>consectetur
+                    adipiscing
+                    elit.</p>
+            </div>
+            <div class="w-full md:w-1/4 p-4 text-center">
+                <img src="https://cdn-icons-png.freepik.com/512/1598/1598209.png"
+                    style="height: 60px; width: 60px; background-color: #f1f1f1; border-radius: 50%; padding: 5px; margin-left: 50px;"
+                    alt="icon" class="mx-auto">
+                <h3 class="mt-4 font-bold ml-12" style="text-align: left;">Organic Fodder</h3>
+                <p class="mt-2 ml-12" style="text-align: left;">Lorem ipsum dolor sit amet,<br>consectetur
+                    adipiscing
+                    elit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mx-auto py-8">
+    <h2 class="text-2xl font-bold">Related Products</h2>
+    <p class="mt-4 text-zinc-600">It is a long established fact that a reader will be distracted by the readable<br>
+        content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+    <div class="flex flex-wrap mt-8">
+        <div class="w-full md:w-1/2 p-4">
+            <div class="bg-white flex p-4 rounded shadow-md" style="height: 250px;">
+                <img src="https://webstrot.com/html/farmland/farmland/images/img10.png"
+                    style="width: 300px; height: 100%; padding: 50px; background-color: #fdefed; object-fit: contain;"
+                    alt="product" class="rounded">
+                <div class="ml-4">
+                    <h3 class="mt-4 font-bold">ACTIGEN®</h3>
+                    <p class="mt-2 text-zinc-600">Actigen provides a cost-effective means of maintaining gut health
+                        and
+                        integrity to support overall performance.</p>
+                    <a href="#" class="text-red-500 mt-4 inline-block">
+                        <span class="flex">
+                            <span>Read More</span>
+                            <span class="material-symbols-outlined ml-2">
+                                east
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 p-4">
+            <div class="bg-white flex p-4 rounded shadow-md" style="height: 250px;">
+                <img src="https://webstrot.com/html/farmland/farmland/images/img9.png"
+                    style="width: 300px; height: 100%; padding: 50px; background-color: #fdefed; object-fit: contain;"
+                    alt="product" class="rounded">
+                <div class="ml-4">
+                    <h3 class="mt-4 font-bold">BIOPLEX®</h3>
+                    <p class="mt-2 text-zinc-600">Bioplex offers a range of trace minerals that provide mineral
+                        nutrition in a form as close to nature as possible.</p>
+                    <a href="#" class="text-red-500 mt-4 inline-block">
+                        <span class="flex">
+                            <span>Read More</span>
+                            <span class="material-symbols-outlined ml-2">
+                                east
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="info" class="text-white py-8">
+    <div class="container mx-auto flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4 text-center flex flex-col items-center justify-center" style="height: 500px; background-image: url('https://www.desktopbackground.org/download/o/2015/09/11/1009235_high-resolution-nature-spring-animal-chicken-wallpapers-hd-22-full_2560x1600_h.jpg'); /* From https://css.glass */
+                background: rgba(132, 171, 139, 0.2);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(132, 171, 139, 0.3);">
+            <img src="https://webstrot.com/html/farmland/farmland/images/icon5.png" alt="icon" class="mx-auto">
+            <h3 class="mt-4 font-bold text-black">Layer Breeders</h3>
+            <p class="mt-2 text-black" style="text-align: center;">The Hy-Line W-80 India & The Hy-Line Brown are
+                robust
+                and<br>persistent egg layers ideally
+                suited for the consumer market.</p>
+            <a href="#" class="bg-white text-black px-4 py-2 rounded mt-4 inline-block">READ MORE</a>
+        </div>
+        <div class="w-full md:w-1/2 p-4 text-center flex flex-col items-center justify-center" style="height: 500px; /* From https://css.glass */
+                background: rgba(223, 91, 114, 0.2);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(223, 91, 114, 0.3);">
+            <img src="https://webstrot.com/html/farmland/farmland/images/icon6.png" alt="icon" class="mx-auto">
+            <h3 class="mt-4 font-bold text-black">Broiler Breeders</h3>
+            <p class="mt-2 text-black" style="text-align: center;">The Ross AP95 is a fast growing bird and feed
+                efficient
+                broiler<br>with good meat yield.
+            </p>
+            <a href="#" class="bg-white text-black px-4 py-2 rounded mt-4 inline-block">READ MORE</a>
+        </div>
+    </div>
+</div>
+<div id="gallery" class="bg-100 p-8" style="margin-top: -32px;">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12" style="margin-top: 10px;">
+            <h2 class="text-3xl font-bold mb-4">Gallery Of Our Poultry Farm</h2>
+            <p class="text-zinc-700 mb-6">It is a long established fact that a reader will be distracted by the
+                readable content of a page<br>when looking at its layout. The point of using Lorem Ipsum</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img13.png"
+                style="width: 450px; height: 300px; object-fit: cover;" alt="Gallery Image"
+                class="w-full h-auto rounded-lg">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img14.png"
+                style="width: 450px; height: 300px; object-fit: cover;" alt="Gallery Image"
+                class="w-full h-auto rounded-lg">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img15.png"
+                style="width: 450px; height: 300px; object-fit: cover;" alt="Gallery Image"
+                class="w-full h-auto rounded-lg">
+            <img src="https://webstrot.com/html/farmland/farmland/images/img2.png"
+                style="width: 450px; height: 300px; object-fit: cover;" alt="Gallery Image"
+                class="w-full h-auto rounded-lg">
+        </div>
+
+
+        <div class="flex items-center justify-center"
+            style="height: 500px; width: 99%; margin-left: 0.5%; background-color: #73805a;">
+            <div class="testimonial-left flex flex-col items-center justify-center"
+                style="text-align: left; border-right: 1px solid #fff; height: 70%; width: 50%;">
+                <span class="material-symbols-outlined" style="font-size: 100px; color: #818d6b; margin-left: 300px;">
+                    quick_phrases
+                </span>
+                <h2 style="color: #ffd55f; font-weight: bolder; font-size: 35px; margin-left: -150px;">TESTIMONIALS
+                </h2>
+                <h1 style="color: #f1f1f1; font-weight: bolder; font-size: 40px;">What our customers<br>are talking
+                    about us</h1>
+                <button class="bg-white text-black px-4 py-2 rounded mt-2" style="margin-left: -250px;">
+                    <span class="flex">
+                        <span style="font-weight: bold;">VIEW ALL</span>
+                        <span class="material-symbols-outlined ml-2">
+                            east
+                        </span>
+                    </span>
+                </button>
+            </div>
+            <div class="testimonial-right flex flex-col items-center justify-center"
+                style="text-align: left; border-left: 1px solid #fff; height: 70%; width: 50%;">
+                <h6 style="font-style: italic; color: #f1f1f1; font-size: 18px;">Continually productize compelling
+                    quality for packed with<br>Elated productize compelling quality for packed with all<br>Elated
+                    Theme Setting up to website and creating pages.<br>Continually productize compelling quality for
+                    packed with<br>Elated productize compelling quality for packed with all<br>Elated Theme Setting
+                    up to website and creating pages.</h6>
+                <h3 style="color: #f1f1f1; margin-left: -180px; font-size: 25px; font-weight: bold;">MATHEW E.
+                    SANBORN</h3>
+            </div>
+        </div>
+
+
+        <div id="blog" class="text-center mb-12 mt-8">
+            <h2 class="text-3xl font-bold mb-4 mt-12">Latest News & Articles</h2>
+            <p class="text-zinc-700 mb-6">It is a long established fact that a reader will be distracted by the
+                readable<br>content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://webstrot.com/html/farmland/farmland/images/img22.png" alt="Article Image"
+                    class="w-full h-auto rounded-lg mb-4" style="width: 400px; height: 300px; object-fit: cover;">
+                <h3 class="text-xl font-bold mb-2">Omega-3 Chicken, egg may lower heart attack</h3>
+                <p class="text-zinc-700 mb-4">Synergen is a product of the solid state fermentation of Aspergillus
+                    niger.</p>
+                <button class="bg-600 text-white px-4 py-2 rounded-lg" style="background-color: #ed624f;">READ
+                    MORE</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://webstrot.com/html/farmland/farmland/images/img102.png" alt="Article Image"
+                    class="w-full h-auto rounded-lg mb-4" style="width: 400px; height: 300px; object-fit: cover;">
+                <h3 class="text-xl font-bold mb-2">Omega-3 Chicken, egg may lower heart attack</h3>
+                <p class="text-zinc-700 mb-4">Synergen is a product of the solid state fermentation of Aspergillus
+                    niger.</p>
+                <button class="bg-600 text-white px-4 py-2 rounded-lg" style="background-color: #ed624f;">READ
+                    MORE</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://webstrot.com/html/farmland/farmland/images/img103.png" alt="Article Image"
+                    class="w-full h-auto rounded-lg mb-4" style="width: 400px; height: 300px; object-fit: cover;">
+                <h3 class="text-xl font-bold mb-2">Synergen chicken, egg may lower heart attack</h3>
+                <p class="text-zinc-700 mb-4">Synergen is a product of the solid state fermentation of Aspergillus
+                    niger.</p>
+                <button class="bg-600 text-white px-4 py-2 rounded-lg" style="background-color: #ed624f;">READ
+                    MORE</button>
+            </div>
+            <button class="flex items-center justify-center text-white px-2 py-2 rounded-lg"
+                style="background-color: #73805a; width: 200px;">
+                <span class="flex items-center justify-center">
+                    <span style="font-weight: bold;">VIEW ALL</span>
+                    <span class="material-symbols-outlined ml-2">
+                        east
+                    </span>
+                </span>
+            </button>
+        </div>
+        <section id="contact" class="section" style="display: flex; ">
+            <div class="container" style=" width: 50%; height: 100%;">
+                <h1 class="title">Contact Us</h1>
+                <div class="columns">
+                    <div class="column is-half">
+                        <form action="{{ url_for('contact') }}" method="post">
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control" style="width: 700px;">
+                                    <input class="input" name="name" type="text" placeholder="Your Name" style="width: 500px;">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control" style="width: 700px;">
+                                    <input class="input" name="email" type="email" placeholder="Your Email" style="width: 500px;">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control" style="width: 500px;">
+                                    <textarea class="textarea" name="message" cols="70" placeholder="Your Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button"
+                                        style="background-color: #ef4444; color: #f1f1f1;">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style=" width: 50%;">
+                <img style="height: 100%; object-fit: cover;"
+                    src="https://img.freepik.com/free-vector/hand-drawn-gen-alpha-illustration_23-2151217725.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1716508800&semt=ais_user"
+                    alt="">
+            </div>
+        </section>
+    </div>
+</div>
+<div class="py-8" style="height: 510px; background-color: #f1f1f1;">
+    <div class="container mx-auto px-4" style="background-color: #f1f1f1;">
+        <div class="text-center border-b py-5" style="display: flex; justify-content: space-between;">
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    satellite_alt
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">FAST DELIVERY</p>
+                <p style="color: #bbb; font-size: 13px;">Across West & East India</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    account_balance_wallet
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">SAFE PAYMENT</p>
+                <p style="color: #bbb; font-size: 13px;">100% Secure Payment</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    money_off
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">ONLINE DISCOUNT</p>
+                <p style="color: #bbb; font-size: 13px;">Add Multi-buy Discount</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    support_agent
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">HELP CENTER</p>
+                <p style="color: #bbb; font-size: 13px;">Dedicated 24/7 Support</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 35px; color: #eab308;">
+                    list_alt
+                </span>
+                <p class="font-semibold mt-2" style="font-size: 14px;">CURATED ITEMS</p>
+                <p style="color: #bbb; font-size: 13px;">From Handpicked Sellers</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+            <div>
+                <h3 class="font-bold mb-2">ABOUT THE STORE</h3>
+                <p style="color: #515d66; font-size: 14px;">Got Question? Call us 24/7</p>
+                <p class="text-xl font-bold my-3" style="font-size: 36px; color: #eab308;">254-710226244</p>
+                <p style="color: #515d66; font-size: 14px;">268 St, South New York/NY 98944, United States</p>
+                <p style="color: #515d66; font-size: 14px;">Customersupport@example.com</p>
+                <p style="color: #515d66; font-size: 14px;">Aloshopify@alothemes.com</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">INFOMATION</h3>
+                <p style="color: #515d66; font-size: 14px;">You have not selected the footer menu</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">QUICK LINKS</h3>
+                <p style="color: #515d66; font-size: 14px;">You have not selected the footer menu</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">NEWSLETTER SIGNUP</h3>
+                <p style="color: #515d66; font-size: 14px;">Join 20.000+ subscribers and get a new discount coupon
+                    on every Saturday. Updates information
+                    on Sales and Offers.</p>
+                <div class="flex mt-2">
+                    <input type="email" placeholder="Your email address..."
+                        class="p-2 rounded-l-lg border border-zinc-300 flex-1">
+                    <button class="text-white p-2 rounded-r-lg"
+                        style="font-size: 14px; background-color: #eab308;">SUBSCRIBE</button>
+                </div>
+                <p class="mt-2" style="color: #515d66; font-size: 14px;">Subscribe for Uminex and get 20% off your
+                    first purchase.</p>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center py-4 border-t">
+            <p class="text-center md:text-left">Copyright © poultry_web all rights reserved. Powered by <a href="#"
+                    class="text-blue-600">Alothemes</a>.</p>
+            <div class="flex mt-4 md:mt-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/M-PESA.png"
+                    style="width: 50px; height: 30px; object-fit: contain;" alt="Visa" class="mx-1">
+                <img src="https://amref.org/wp-content/uploads/2017/10/airtel-money.png"
+                    style="width: 50px; height: 30px; object-fit: contain;" alt="MasterCard" class="mx-1">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

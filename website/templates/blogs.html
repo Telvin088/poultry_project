@@ -1,0 +1,57 @@
+{% extends 'dash_base.html' %}
+{% block title %}Blogs{% endblock %}
+{% block content %}
+<div class="p-4 flex">
+    <div class="p-4" style="margin-left: -30px; margin-top: -30px; width: 500px;">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action="{{ url_for('post_blog') }}"
+            enctype="multipart/form-data">
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-image">Blog Image</label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="blog-image" name="blog-image" type="file" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-title">Blog Title</label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="blog-title" name="blog-title" type="text" placeholder="Enter blog title">
+            </div>
+            <div class="mb-4">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-text">Blog Text</label>
+                <textarea
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="blog-text" name="blog-text" placeholder="Enter blog text"></textarea>
+            </div>
+            <div class="mb-6">
+                <label class="block text-zinc-700 text-sm font-bold mb-2" for="blog-date">Blog Date</label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="blog-date" name="blog-date" type="date">
+            </div>
+            <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">Post</button>
+        </form>
+    </div>
+    <div class="p-4" style="margin-top: -30px; width: 500px;">
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-zinc-700 text-lg font-bold mb-4">Blog History</h2>
+            <div class="blogs-container">
+                {% for blog in blogs %}
+                <div class="blog-item flex mt-4" style="color: #333;">
+                    <div style="height: auto; width: 5px; background-color: #29cc97;"></div>
+                    <div class="ml-2">
+                        <h3><strong style="color: #29cc97; text-decoration-line: underline;">{{ blog.title }}</strong></h3>
+                        <p>{{ blog.content }}</p>
+                        <p style="text-decoration-line: underline; font-size: 12px; font-style: italic;">{{
+                            blog.blog_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

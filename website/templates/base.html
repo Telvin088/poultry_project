@@ -1,0 +1,475 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    * {
+      font-family: "Bai Jamjuree", sans-serif;
+    }
+
+    /* Basic styling for the popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .popup.active {
+      display: block;
+    }
+
+    .popup .close-btn {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    .popup-content img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .popup-content .icon {
+      font-size: 24px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .close-button {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .topmost-nav {
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .topmost-nav.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="fixed top-0 left-0 w-full z-10">
+    <div class="topmost-nav bg-yellow-500 text-white p-4 flex justify-between items-center">
+      <div class="flex w-300">
+        <span class="flex mr-3"><span class="material-symbols-outlined"> call </span><span>+1
+            (888)123-4567</span></span>
+        |
+        <span class="flex ml-3">
+          <span class="material-symbols-outlined"> mail </span><span>info@farmland.com</span></span>
+      </div>
+    </div>
+    <div class="bg-white shadow-md">
+      <div class="container mx-auto flex justify-between items-center py-4">
+        <img src="https://webstrot.com/html/farmland/farmland/images/logo/logo.png" alt="Farmland Logo" />
+        <nav class="flex space-x-4">
+          <a href="{{ url_for('index') }}#home" class="text-zinc-700">Home</a>
+          <a href="{{ url_for('index') }}#about" class="text-zinc-700">About</a>
+          <a href="{{ url_for('index') }}#products" class="text-zinc-700">Products</a>
+          <a href="{{ url_for('index') }}#info" class="text-zinc-700">Info</a>
+          <a href="{{ url_for('index') }}#gallery" class="text-zinc-700">Gallery</a>
+          <a href="{{ url_for('index') }}#blog" class="text-zinc-700">Blog</a>
+          <a href="{{ url_for('index') }}#contact" class="text-zinc-700">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <span class="material-symbols-outlined"> search </span>
+          <span class="material-symbols-outlined"> shopping_cart </span>
+          <span class="flex items-center justify-center"
+            style="background-color: #f44336; font-size: 10px; color: #fff; height: 18px; width: 18px; border-radius: 50%; margin-left: -13px; margin-top: -20px;">0</span>
+          {% if 'username' in session %}
+          <span class="flex items-center">
+            <span class="material-symbols-outlined">
+              person
+            </span>
+            <span class="text-zinc-700 ml-2">Hi, {{ session['username'] }}!</span>
+            <span class="text-zinc-700 material-symbols-outlined cursor-pointer ml-1 text-small">
+              keyboard_arrow_down
+            </span>
+          </span>
+          {% else %}
+          <a href="{{ url_for('signup') }}">
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Log In / Register</button>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% block content %}{% endblock %}
+  <script>
+    // Content for each popup including HTML for images and icons
+    const popupContents = {
+      'alternative-eggs': `
+            <div>
+              <div class="flex">
+                <img src="https://makeitdairyfree.com/wp-content/uploads/2019/06/vegan-egg-substitute-pinterest.jpg" style="width: 150px; height: 150px; object-fit: cover;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                  Alternative eggs refer to eggs produced through non-conventional means, including plant-based or lab-grown alternatives, as well as those from free-range or organic farming systems. Including plant-based or lab-grown alternatives which can be the top most
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Types</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Plant-Based Eggs:</span><p style="margin-left: 20px;">Made from ingredients like mung beans, soy, or other plant proteins, designed to mimic the taste and texture of real eggs.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Lab-Grown Eggs:</span><p style="margin-left: 20px;">Produced using cellular agriculture, where egg proteins are cultivated in a lab setting.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Free-Range Eggs:</span><p style="margin-left: 20px;">Eggs from hens that have access to outdoor spaces</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Organic Eggs:</span><p style="margin-left: 20px;">Produced by hens fed organic feed, free from synthetic pesticides and fertilizers, with access to the outdoors.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `,
+      'poultry-cages': `
+            <div>
+              <div class="flex">
+                <img src="https://i.pinimg.com/564x/fe/a4/c4/fea4c4489376ddcc20d954d0215e68aa.jpg" style="width: 150px; height: 150px; object-fit: cover;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                  Enclosures used to house poultry, designed to maximize space, ease of management, and bird health.
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Types</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Battery Cages:</span><p style="margin-left: 20px;">Small, individual cages for laying hens, often criticized for ethical reasons.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Enriched Cages:</span><p style="margin-left: 20px;">Larger than battery cages, providing more space and enrichments like perches and nesting areas.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Colony Cages:</span><p style="margin-left: 20px;">Allow groups of birds to live together with more space than traditional battery cages.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Free-Range Systems:</span><p style="margin-left: 20px;">Large, open pens or outdoor areas where birds can roam more freely.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `,
+      'breeder-management': `
+            <div>
+              <div class="flex">
+                <img src="https://avinews.com/wp-content/uploads/2021/05/broiler-breeders-1.png" style="width: 150px; width: 150px;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                  Practices and strategies used to manage poultry breeders (parents of commercial broilers or layers) to ensure optimal reproduction and health.
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Key Aspects</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Nutrition:</span><p style="margin-left: 20px;">Balanced diet to support reproductive health.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Health Monitoring:</span><p style="margin-left: 20px;">Regular health checks and vaccination schedules.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Lighting Programs:</span><p style="margin-left: 20px;">Controlled light exposure to stimulate laying.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Record Keeping:</span><p style="margin-left: 20px;">Tracking breeding records, hatchability, and progeny performance.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `,
+      'poultry-climate': `
+            <div>
+              <div class="flex">
+                <img src="https://earlyfeednutrition.com/app/uploads/2022/07/Preparing-a-home-for-day-old-chicks-climate-and-ventilation-feat-audio.png" style="width: 150px; height: 150px; object-fit: cover;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                  The environmental conditions within poultry housing that affect the health, growth, and productivity of the birds.
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Key Factors</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Temperature:</span><p style="margin-left: 20px;">Maintaining optimal temperatures depending on the bird's age and species. Chicks need warmer environments (around 32-35°C initially), while adults thrive at 20-25°C.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Humidity:</span><p style="margin-left: 20px;">Ideal humidity levels range from 50-70%. High humidity can promote disease, while low humidity can cause respiratory issues.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Ventilation:</span><p style="margin-left: 20px;">Ensuring fresh air circulation to reduce ammonia buildup from droppings, control temperature, and humidity.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Lighting:</span><p style="margin-left: 20px;">Providing appropriate lighting schedules to stimulate growth and laying cycles. Natural light or artificial light can be used, with specific hours of light and darkness.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `,
+      'residue-treatment': `
+            <div>
+              <div class="flex">
+                <img src="https://www.fertilizer-machine.net/wp-content/uploads/2018/06/Biogas-Residue-Treatment-making-organic-fertilizer.jpg" style="width: 150px; height: 150px; object-fit: cover;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                  Processes and practices used to manage waste products from poultry farming, including manure, bedding, and dead birds, to minimize environmental impact and promote sustainability.
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Treatment Methods</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Composting:</span><p style="margin-left: 20px;">Biological decomposition of organic matter under controlled conditions, turning waste into nutrient-rich compost.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Incineration:</span><p style="margin-left: 20px;">Burning waste at high temperatures to reduce volume and kill pathogens, though it can be costly and have environmental concerns.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Rendering:</span><p style="margin-left: 20px;">Processing of dead birds to produce animal feed or biofuels.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Land Application:</span><p style="margin-left: 20px;">Direct application of manure to fields as fertilizer, following guidelines to prevent nutrient runoff and pollution.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `,
+      'exhaust-air-treatment': `
+            <div>
+              <div class="flex">
+                <img src="https://metiz.tw/assets/images/plating-equipment/exhaust_01.jpg" style="width: 150px; height: 150px; object-fit: cover;" alt="Alternative Eggs">
+                <div class="ml-4 mt-2">
+                  <h5 style="font-weight: bold;">Definition</h5>
+                <p style="font-size: 16px;" class="mt-1">
+                 Exhaust air treatment refers to the methods and technologies used to clean and manage the air being expelled from poultry housing to minimize environmental pollution and maintain a healthy living environment for the birds.
+                </p>
+                </div>
+              </div>
+                
+                <h5 style="font-weight: bold; margin-top: 15px;">Importance</h5>
+                <p>
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Air Quality:</span><p style="margin-left: 20px;">Removing harmful gases and particulate matter to ensure the health of both birds and farm workers.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Odor Control:</span><p style="margin-left: 20px;">Reducing unpleasant odors that can affect surrounding communities.</p>
+                    </span>
+                  </span>
+                </p>
+                <p class="mt-3">
+                  <span class="flex items-center">
+                    <span class="flex items-center">
+                      <span style="font-size: 18px;" class="material-symbols-outlined">task_alt</span>
+                      <span style="text-decoration-line: underline; font-weight: bold;" class="ml-1">Environmental Protection:</span><p style="margin-left: 20px;">Preventing the release of ammonia, dust, and pathogens into the atmosphere.</p>
+                    </span>
+                  </span>
+                </p>
+            </div>
+        `
+    };
+
+    document.querySelectorAll('span[id]').forEach(span => {
+      span.addEventListener('click', () => {
+        const contentId = span.id;
+        document.getElementById('popup-content').innerHTML = popupContents[contentId];
+        document.getElementById('popup').classList.add('active');
+        document.getElementById('overlay').classList.add('active');
+      });
+    });
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+      document.getElementById('overlay').classList.remove('active');
+    }
+
+    document.querySelector('.popup .close-btn').addEventListener('click', closePopup);
+    document.querySelector('.popup .close-button').addEventListener('click', closePopup);
+    document.getElementById('overlay').addEventListener('click', closePopup);
+
+    // Close popup when clicking anywhere outside the popup
+    document.addEventListener('click', (event) => {
+      const popup = document.getElementById('popup');
+      if (!popup.contains(event.target) && !event.target.matches('span[id]')) {
+        closePopup();
+      }
+    });
+  </script>
+  <script>
+    let lastScrollTop = 0;
+    const topmostNav = document.querySelector('.topmost-nav');
+
+    window.addEventListener('scroll', function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // Downscroll
+        topmostNav.classList.add('hidden');
+      } else {
+        // Upscroll
+        topmostNav.classList.remove('hidden');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    }, false);
+  </script>
+  
+</body>
+
+</html>
